@@ -1,0 +1,76 @@
+######################################################
+# TEMPLATES #
+######################################################
+
+templates:
+  Chart:
+    sort_title: +1_&lt;&gt;&lt;&gt;
+    sync_mode: sync
+    smart_label: added.desc
+  Best of:
+    trakt_list: https://trakt.tv/users/lish408/lists/rotten-tomatoes-best-of-&lt;&gt;
+    sort_title: +1_Best of &lt;&gt;
+    sync_mode: sync
+    summary: Rotten Tomatoes Highest rated Movies of &lt;&gt;
+    smart_label: audience_rating.desc
+
+######################################################
+# COLLECTIONS #
+######################################################
+
+collections:
+
+######################################################
+# BEST OF #
+######################################################
+  Joe's Favorites:
+    letterboxd_list: https://letterboxd.com/rinderhack/list/good-movies/detail/
+    collection_order: custom
+    sync_mode: sync
+    summary: Joes Film-Empfehlungen (4-5 Sterne-Bewertungen)
+
+  Paul's Favorites:
+    letterboxd_list: https://letterboxd.com/ninatwt/list/pauls-favourites/detail/
+    collection_order: custom
+    sync_mode: sync
+    summary: Pauls Film-Empfehlungen
+
+
+
+  Oscars Best Picture Winners:
+    sort_title: '+2 Oscars Best Picture Winners'
+    trakt_list: https://trakt.tv/users/pjcob/lists/1970-2021-oscars-best-picture-winners?sort=rank,asc
+
+######################################################
+# FRANCHISES #
+######################################################
+
+  A24:
+    smart_label: title.asc
+    imdb_list:
+      - https://www.imdb.com/de/list/ls505551455/
+    summary: A24 Movies
+    sort_title: '+2 A24'
+    collection_order: release
+
+  DC Extended Universe:
+    imdb_list: https://www.imdb.com/list/ls021326258/
+    summary: A collection of all DC movies.
+    sort_title: 'DC'
+    collection_order: release
+    collection_mode: default
+
+  Disney Movies:
+    imdb_list: https://www.imdb.com/de/list/ls026785255/
+    summary: A collection of all Disney movies.
+    sort_title: 'Disney Movies'
+    collection_order: release
+    collection_mode: default
+
+  Marvel Cinematic Universe:
+    imdb_list: https://www.imdb.com/list/ls000024621/
+    summary: A collection of all MCU movies.
+    sort_title: 'MCU'
+    collection_order: release
+    collection_mode: default
+
