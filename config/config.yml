@@ -1,0 +1,179 @@
+plex:
+  url: http://192.168.0.69:32400/
+  token: 352y48mVnbDGrENstrWh
+  timeout: 60
+  db_cache: 40
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+  verify_ssl: true
+
+tmdb:
+  apikey: 5b7d2569b57626e3535316ffc0caac52
+  cache_expiration: 60
+  language: de
+  region: de
+
+libraries:
+  Filme:
+    collection_files:
+    - default: basic
+      template_variables:
+        use_separator: false
+    - default: imdb
+      use_separator: false
+      template_variables:
+        use_separator: false
+        use_popular: false
+        use_lowest: false
+    - default: tmdb
+      template_variables:
+        data_trending: daily
+        use_separator: false
+        use_top: false
+        use_popular: false
+        name_trending: Jetzt angesagt
+    - default: universe
+      settings:
+        asset_directory: config/assets/universe
+        asset_folders: true
+        create_asset_folders: true
+      template_variables:
+        use_separator: false
+        exclude: View Askewniverse
+        file_poster: /config/assets/universe/<>.png
+    - file: config/Movies.yml
+    remove_overlays: false
+    minimum_items: 3
+    overlay_files:
+    - default: languages
+      template_variables:
+        back_width: 1
+        back_height: 1
+        initial_vertical_align: top
+        initial_vertical_offset: 50
+        initial_horizontal_align: left
+        initial_horizontal_offset: 20
+        style: square
+        use_subtitles: false
+        hide_text: true
+        group_alignment: horizontal
+        horizontal_spacing: 120
+        languages:
+        - en
+        - de
+        - ja
+    - file: config/overlays/audience_rating.yml
+    - file: config/overlays/trending.yml
+    - file: config/overlays/fav.yml
+
+  Serien:
+    remove_overlays: false
+    overlay_files:
+    - default: languages
+      template_variables:
+        back_width: 1
+        back_height: 1
+        initial_vertical_align: top
+        initial_vertical_offset: 50
+        initial_horizontal_align: left
+        initial_horizontal_offset: 20
+        style: square
+        use_subtitles: false
+        hide_text: true
+        group_alignment: horizontal
+        horizontal_spacing: 120
+        languages:
+        - en
+        - de
+        - ja
+    - file: config/overlays/status.yml
+
+  Anime:
+    remove_overlays: false
+    overlay_files:
+    - default: languages
+      template_variables:
+        back_width: 1
+        back_height: 1
+        initial_vertical_align: top
+        initial_vertical_offset: 50
+        initial_horizontal_align: left
+        initial_horizontal_offset: 20
+        style: square
+        use_subtitles: false
+        hide_text: true
+        group_alignment: horizontal
+        horizontal_spacing: 120
+        languages:
+        - en
+        - de
+        - ja
+    - file: config/overlays/status.yml
+
+settings:
+  run_order:
+  - operations
+  - metadata
+  - collections
+  - overlays
+  cache: false
+  cache_expiration: 60
+  asset_directory: config/assets
+  asset_folders: true
+  asset_depth: 0
+  create_asset_folders: false
+  prioritize_assets: false
+  dimensional_asset_rename: false
+  download_url_assets: false
+  show_missing_season_assets: false
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+  sync_mode: append
+  minimum_items: 3
+  default_collection_order: release
+  delete_below_minimum: true
+  delete_not_scheduled: false
+  run_again_delay: 2
+  missing_only_released: false
+  only_filter_missing: false
+  show_unmanaged: true
+  show_unconfigured: true
+  show_filtered: false
+  show_unfiltered: false
+  show_options: true
+  show_missing: true
+  show_missing_assets: true
+  save_report: false
+  tvdb_language: eng
+  ignore_ids:
+  ignore_imdb_ids:
+  item_refresh_delay: 0
+  playlist_sync_to_users:
+  playlist_exclude_users:
+  playlist_report: false
+  verify_ssl: true
+  custom_repo:
+  overlay_artwork_filetype: webp_lossy
+  overlay_artwork_quality: 90
+
+webhooks:
+  changes:
+  delete:
+  error:
+  run_end:
+  run_start:
+  version:
+
+trakt:
+  client_id: 107e4c66c1d431e3dc50f77ebc93f8fbf33902bb4b4b45316d4b07895047af14
+  client_secret: acfe55956a4a85033982a443d56b1c95ecc792abc959827d17c549ae270403e1
+  pin:
+  authorization:
+    access_token: 12d8fa37982d3a4b85485a4158fe1ed7fb5efbd1e1678f151d41db4e337d2934
+    token_type: Bearer
+    expires_in: 86400
+    refresh_token: 3c14adbaa48cce586b039fb7d3b3168ca0fc9b40436c9bd5f45102f40f0eee94
+    scope: public
+    created_at: 1762165596
+  force_refresh:
