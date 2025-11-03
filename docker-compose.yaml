@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  kometa:
+    image: lscr.io/linuxserver/kometa:nightly
+    container_name: kometa
+    volumes:
+      - /mnt/usbssd/kometa/config:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+    command: --times 11:11
+    restart: unless-stopped
+networks: {}
